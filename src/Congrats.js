@@ -1,4 +1,5 @@
 import React from 'react'; 
+import PropTypes from 'prop-types';
 
 
 /**
@@ -21,6 +22,11 @@ import React from 'react';
                <div data-test="component-congrats"></div>
            )
        }
+    }
+
+    // this is how we are going to check and get the warning if its not a boolean,  adding isRequied we will get a warning
+    Congrats.propTypes = {
+        success: PropTypes.bool.isRequired
     }
  
 export default Congrats
