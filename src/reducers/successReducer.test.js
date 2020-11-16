@@ -6,7 +6,7 @@ import successReducer from './successReducer';
 
 test('returns default initial state of `false` when no action is passed', () => {
     const newState = successReducer(undefined, {}); // whwnever a reducer does a switch on the action type which is pretty much always 
-    // we have to make sure we pass in a type in the test or we will get cannot ready type of undefined
+    // we have to make sure we pass in a type in the test or we will get cannot ready type of undefined 
     expect(newState).toBe(false); // can use toBe because false is immutable
 }); 
 

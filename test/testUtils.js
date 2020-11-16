@@ -1,5 +1,10 @@
 import checkPropTypes from 'check-prop-types'
+import {createStore} from 'redux'; 
+import rootReducer from '../src/reducers'
 
+export const storeFactory  = (initalState) => {
+    return createStore(rootReducer, initalState); 
+}
 
 /**
  * @function 
