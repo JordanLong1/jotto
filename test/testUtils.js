@@ -3,6 +3,7 @@ import {createStore} from 'redux';
 import rootReducer from '../src/reducers'
 
 export const storeFactory  = (initalState) => {
+    //create a store factory which creates a store for testing that uses reducers from the actual app.
     return createStore(rootReducer, initalState); 
 }
 
@@ -12,9 +13,6 @@ export const storeFactory  = (initalState) => {
  * @returns {ShallowWrapper}
  */
 
-// export const findByTestAttr = (wrapper, val) => {
-//     wrapper.find(`[data-test="${val}"]`)
-// }
 
 export const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test='${val}']`)
 
