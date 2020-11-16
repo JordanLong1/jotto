@@ -1,17 +1,12 @@
 import checkPropTypes from 'check-prop-types'
-import {createStore} from 'redux'; 
+import {createStore, applyMiddleware} from 'redux'; 
 import rootReducer from '../src/reducers'
-
+import {middlewares} from '../src/configureStore'
 export const storeFactory  = (initalState) => {
+    const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore)
     //create a store factory which creates a store for testing that uses reducers from the actual app.
-    return createStore(rootReducer, initalState); 
+    return createStoreWithMiddleware(rootReducer, initalState); 
 }
-
-/**
- * @function 
- * @param {object} props  - component props specific to this setup
- * @returns {ShallowWrapper}
- */
 
 
 export const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test='${val}']`)
