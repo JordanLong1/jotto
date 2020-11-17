@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { actionTypes } from "../actions";
 
 
@@ -9,3 +10,4 @@ export default (state=false, action) => {
         return state; 
     }
 }
+
