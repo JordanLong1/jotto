@@ -21,11 +21,10 @@ test('App component has success as a prop', () => {
 });
 
 test('has access to secretWord state', () => {
-  const word = 'party'; 
-  const wrapper = setUp({word}); 
-  const secretWordProp = wrapper.instance().props.word; 
-  console.log(wrapper.instance().props)
-  expect(secretWordProp).toBe(word);
+  const secretWord = 'party'; 
+  const wrapper = setUp({secretWord}); 
+  const secretWordProp = wrapper.instance().props.secretWord; 
+  expect(secretWordProp).toBe(secretWord);
 });
 
 test('has access to guessedWords state', () => {
