@@ -5,6 +5,24 @@ import {guessWord} from './actions/index';
 
 export class UnconnectedInput extends React.Component {
 
+    state = {currentGuess: null}
+
+    handleChange = (e) => {
+        this.setState({
+            currentGuess: e.target.value
+        });
+    }; 
+
+    handleSubmit = (event) => {
+        event.preventDefault(); 
+        const guessedWord = this.state.currentGuess; 
+
+
+        if (guessedWord && guessWord.length > 0) {
+            this.props.guessWord(guessedWord)
+        }
+    }
+
 
     render() {
         const contents = this.props.success 
@@ -15,11 +33,12 @@ export class UnconnectedInput extends React.Component {
                 className='mb-2 mx-sm-3'
                 type='text'
                 placeholder='enter guess'
+                onChange={this.handleChange}
                 />
                 <button data-test='submit-button'
                 className='btn btn-primary mb-2'
                 type='submit'
-                onClick={() => this.props.guessWord('train')}
+                onClick={this.handleSubmit}
                 >
                     Submit
                 </button>
