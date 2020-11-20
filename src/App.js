@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'; 
 import './App.css';
 import GuessedWords from './GuessedWords'
 import Congrats from './Congrats'
@@ -18,4 +19,8 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {state}
+}
+
+export default connect(mapStateToProps)(App); 
