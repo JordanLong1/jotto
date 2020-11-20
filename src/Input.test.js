@@ -3,6 +3,7 @@ import React from 'react';
 import {shallow} from 'enzyme'; 
 import {findByTestAttr, storeFactory} from '../test/testUtils'; 
 import Input from './Input'; 
+import { guessWord } from './actions';
 
 
 const setUp = (initialState={}) => {
@@ -66,4 +67,10 @@ describe('redux props', () => {
         const successProp = wrapper.instance().props.success;
         expect(successProp).toBe(success);
     });
+
+    test('guessWords prop exists and is a function', () => {
+        const wrapper = setUp(); 
+        const guessWordProp = wrapper.instance().props.guessWord;
+        expect(guessWordProp).toBeInstanceOf(Function);
+    }); 
 });
