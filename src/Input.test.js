@@ -59,6 +59,11 @@ describe('render', () => {
     });
 }); 
 
-describe('update state', () => {
-
+describe('redux props', () => {
+    test('has success piece of state as prop', () => {
+        const success = true; 
+        const wrapper = setUp({ success}); 
+        const successProp = wrapper.instance().props.success;
+        expect(successProp).toBe(success);
+    });
 });
