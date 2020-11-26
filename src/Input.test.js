@@ -3,7 +3,6 @@ import React from 'react';
 import {shallow} from 'enzyme'; 
 import {findByTestAttr, storeFactory} from '../test/testUtils'; 
 import Input, {UnconnectedInput} from './Input'; 
-import { guessWord } from './actions';
 
 
 const setUp = (initialState={}) => {
