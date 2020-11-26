@@ -2,12 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-/**
- * @function
- * @param {object} props  - React props
- * @returns {JSX.Element} - Rendered component 
- */
-
     const Congrats = (props) => {
        if (props.success) {
            return (

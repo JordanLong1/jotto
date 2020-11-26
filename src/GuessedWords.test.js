@@ -10,11 +10,6 @@ const defaultProps = {
     ]
 }
 
-/**
- * @function 
- * @param {object} props  - component props specific to this setup
- * @returns {ShallowWrapper}
- */
 
 const setUp  = (props={}) => {
     const setUpProps = {...defaultProps, ...props}; 
